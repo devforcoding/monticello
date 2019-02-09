@@ -1,0 +1,77 @@
+/// poly-fluid-sizing
+/// Generate linear interpolated size values through multiple break points
+/// @param $property - A string CSS property name
+/// @param $map - A Sass map of viewport unit and size value pairs
+/// @requires function linear-interpolation
+/// @requires function map-sort
+/// @example
+///   @include poly-fluid-sizing('font-size', (576px: 22px, 768px: 24px, 992px: 34px));
+/// @author Jake Wilson <jake.e.wilson@gmail.com>
+@mixin poly-fluid-sizing($property, $map) {
+  // Get the number of provided breakpoints
+  $length: length(map-keys($map));
+
+  // Error if the number of breakpoints is < 2
+  @if ($length < 2) {
+    @error "poly-fluid-sizing() $map requires at least values"
+  }
+
+  // Sort the map by viewport width (key)
+  $map: map-sort($map);
+  $keys: map-keys($map);
+
+  // Minimum size
+  #{$property}: map-get($map, nth($keys,1));
+
+  // Interpolated size through breakpoints
+  @for $i from 1 through ($length - 1) {
+    @media only screen and (min-width:nth($keys,$i)) {
+      $value1: map-get($map, nth($keys,$i));
+      $value2: map-get($map, nth($keys,($i + 1)));
+      // If values are not equal, perform linear interpolation
+      @if ($value1 != $value2) {
+        #{$property}: linear-interpolation((nth($keys,$i): $value1, nth($keys,($i+1)): $value2));
+      } @else {
+        #{$property}: $value1;
+      }
+    }
+  }
+
+  // Maxmimum size
+  @media only screen and (min-width:nth($keys,$length)) {
+    #{$property}: map-get($map, nth($keys,$length));
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}

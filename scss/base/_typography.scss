@@ -1,0 +1,60 @@
+/* fonts */
+@font-face{
+    font-family: 'Gotham';
+    src: url('../../fonts/GothamBook/GothamBook.eot');
+    src: url('../../fonts/GothamBook/GothamBook.woff') format('woff'),
+    url('../../fonts/GothamBook/GothamBook.ttf') format('truetype');
+    font-weight: light;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Gotham';
+    src: url('../../fonts/gothambold/gothambold1.eot');
+    src: url('../../fonts/gothambold/gothambold1.woff') format('woff'),
+    url('../../fonts/gothambold/gothambold1.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Gotham';
+    src: url('../../fonts/Gotham Medium Regular/Gotham_Medium_Regular.ttf') format('typetrue'),
+    url('../../fonts/Gotham Medium Regular/gotham-medium-webfont.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i');
+
+
+[class^=heading] {
+    text-transform: uppercase;
+    color: currentColor;
+    line-height: 1;
+    margin: 0;
+}
+
+.heading-1 {
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.heading-4 {
+    font-size: 2.6em;
+    letter-spacing: 8px;
+    font-weight: 700;
+}
+
+.heading-5 {
+    font-size: 2.6em;
+    font-weight: 500;
+}
+
+.heading-6 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: .3em;
+    font-weight: 700;
+}

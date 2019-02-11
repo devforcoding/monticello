@@ -1,31 +1,35 @@
 /* fonts */
-@font-face{
-    font-family: 'Gotham';
-    src: url('../../fonts/GothamBook/GothamBook.eot');
-    src: url('../../fonts/GothamBook/GothamBook.woff') format('woff'),
-    url('../../fonts/GothamBook/GothamBook.ttf') format('truetype');
-    font-weight: light;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: 'Gotham';
-    src: url('../../fonts/gothambold/gothambold1.eot');
-    src: url('../../fonts/gothambold/gothambold1.woff') format('woff'),
-    url('../../fonts/gothambold/gothambold1.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face{
-    font-family: 'Gotham';
-    src: url('../../fonts/Gotham Medium Regular/Gotham_Medium_Regular.ttf') format('typetrue'),
-    url('../../fonts/Gotham Medium Regular/gotham-medium-webfont.woff') format('woff');
-    font-weight: medium;
-    font-style: normal;
-}
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i');
+
+@font-face {
+    font-family: 'gotham_mediumregular';
+    src: url('../fonts/gotham_medium_regular.ttf') format('opentype'),
+    url('../fonts/gotham_medium_regular.woff2') format('woff2'),
+    url('../fonts/gotham_medium_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothambold1';
+    src: url('../fonts/gothambold1.eot');
+    src: local('gothambold1'),
+    url('../fonts/gothambold1.woff') format('woff'),
+    url('../fonts/gothambold1.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gothamBook';
+    src: url('../fonts/gothamBook.eot');
+    src: local('gothamBook'),
+    url('../fonts/gothamBook.woff') format('woff'),
+    url('../fonts/gothamBook.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 [class^=heading] {

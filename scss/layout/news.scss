@@ -1,0 +1,15 @@
+
+#news {
+  .flex-row  {
+    padding-bottom: 210px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  .flex-item  {
+    width: 32%;
+    height: 515px;
+  }
+}

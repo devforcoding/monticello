@@ -1,0 +1,9 @@
+.btn {
+  @include button;
+  margin-bottom: 60px;
+
+  #gallery & {
+    margin: 60px calc(50% - 95px) 140px;
+  }
+
+}

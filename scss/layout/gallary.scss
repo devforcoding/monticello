@@ -1,0 +1,33 @@
+#gallery {
+
+  h2 {
+    margin-bottom: 100px;
+  }
+
+  .flex-row {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+
+  .flex-item {
+    width:  49%;
+    height: auto;
+  }
+
+  .flex-item--lg {
+    width:  49.5%;
+  }
+
+  .flex-item > .img-wrap {
+    margin-bottom: 4%;
+    font-size: 0;
+  }
+
+  .flex-item--lg > .img-wrap {
+    margin-bottom: 1.8%;
+  }
+
+  img {
+    width: 100%;
+  }
+}

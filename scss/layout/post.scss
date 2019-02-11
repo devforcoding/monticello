@@ -1,0 +1,77 @@
+
+.post {
+  overflow: hidden;
+  &__img-wrap {
+    height: 46%;
+    overflow: hidden;
+    position: relative;
+  }
+  &__img {
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    transform: translate(-50%, -50%)
+  }
+  &__data {
+    height: 53%;
+    background-color: #fff;
+    padding: 30px 35px 30px 20px;
+    @include flex-column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-family: 'gothambold1', sans-serif;
+    font-size: 2.1rem;
+    color: #728090;
+    max-height: 7.4rem;
+    overflow: hidden;
+    padding-bottom: 20px;
+    @extend %uppercase;
+
+  }
+  &__text {
+    color: #636c77;
+    max-height: 5.1rem;
+    overflow: hidden;
+  }
+
+  &__author {
+    padding-top: 30px;
+    font-family: 'GothamBook', sans-serif;
+    @include flex-row;
+    justify-content: flex-start;
+    .wrap {
+      width: 60px;
+      margin: 0 20px 0 0;
+      text-align: center;
+      font-size: 0;
+      &-img {
+        min-width: 100%;
+        min-height: 100%;
+        border-radius: 50%;
+      }
+    }
+    p.info-name {
+      margin: 0 0 15px;
+    }
+
+
+    .info {
+      &-name {
+        color: #808c9b;
+        font-size: 1.8rem;
+        @extend %uppercase;
+      }
+      &-time {
+        font-size: 1.4rem;
+        color: #55b7ff;
+      }
+    }
+
+  }
+}

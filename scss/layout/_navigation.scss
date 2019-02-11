@@ -1,6 +1,7 @@
 .navbar {
     width: 90%;
     margin: 0 auto;
+    padding-top: 40px;
 
     &--white {
         color: #fff;
@@ -14,10 +15,6 @@
     &__content {
         display: flex;
         align-items: center;
-
-        @include respond(tab-port) {
-            display: none;
-        }
     }
 
 
@@ -60,10 +57,12 @@
     &__link,
     &__link:link,
     &__link:visited {
+        font-size: 14px;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 400;
         color: inherit;
+
     }
 
     &__social-icons {

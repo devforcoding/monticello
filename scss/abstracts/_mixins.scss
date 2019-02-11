@@ -1,3 +1,43 @@
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin button {
+  display: inline-block;
+  background-color:  #fff;
+  color: #2c4058;
+  font-family: 'GothamBook', sans-serif;
+  font-size: 1.4rem;
+  @extend %uppercase;
+  border: 1px solid #2c4058;
+  text-decoration: none;
+  padding: 20px 40px;
+  @extend %transition;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #0d1a0e;
+    background-color: rgba(126, 90, 255, 0.22);
+  }
+}
+
+
+
+
 /// poly-fluid-sizing
 /// Generate linear interpolated size values through multiple break points
 /// @param $property - A string CSS property name

@@ -2,7 +2,7 @@
 (function ($) {
     $(document).ready(function () {
         $('#slider').slick({
-            dots: false,
+            dots: true,
             infinite: true,
             speed: 500,
             cssEase: 'linear',
